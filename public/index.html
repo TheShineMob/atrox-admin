@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <% for (var i in htmlWebpackPlugin.options.cdn&&htmlWebpackPlugin.options.cdn.css) { %>
+      <link href="<%= htmlWebpackPlugin.options.cdn.css[i] %>" rel="preload" as="style">
+      <link href="<%= htmlWebpackPlugin.options.cdn.css[i] %>" rel="stylesheet">
+    <% } %>
+    <% for (var i in htmlWebpackPlugin.options.cdn&&htmlWebpackPlugin.options.cdn.js) { %>
+      <link href="<%= htmlWebpackPlugin.options.cdn.js[i] %>" rel="preload" as="script">
+    <% } %>
+    <title><%= VUE_APP_TITLE %></title>
+    <!-- 首屏加载动画 -->
+    <style>
+      html,
+      body,
+      #app {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+      }
+
+      .atrox-home {
+        background-color: #303133;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .atrox-home__main {
+        user-select: none;
+        width: 100%;
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .atrox-home__loading {
+        height: 32px;
+        width: 32px;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but <%= VUE_APP_TITLE %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app">
+      <div class="atrox-home">
+        <div class="atrox-home__main">
+          <img
+            class="atrox-home__loading"
+            src="./image/svg/loading-spin.svg"
+            alt="loading">
+        </div>
+        
+      </div>
+    </div>
+        <!-- 阿巴阿巴  -->
+    <% for (var i in htmlWebpackPlugin.options.cdn&&htmlWebpackPlugin.options.cdn.js) { %>
+      <script src="<%= htmlWebpackPlugin.options.cdn.js[i] %>"></script>
+    <% } %>
+  </body>
+</html>

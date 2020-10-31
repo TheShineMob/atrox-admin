@@ -1,0 +1,25 @@
+//  覆盖vuetify不合适的样式
+.v-btn {
+  text-transform: none !important; // 按钮中文字不大写
+}
+
+.vxe-input--panel {
+  z-index: 1000 !important;
+}
+
+.v-input {
+  font-size: inherit !important;
+
+  fieldset {
+    border-width: 1px !important;
+  }
+
+  .v-input__slot {
+    min-height: 34px !important;
+    margin-bottom: 2px;
+  }
+
+  .v-text-field__details {
+    margin-bottom: 4px;
+  }
+}

@@ -1,0 +1,163 @@
+.atrox-form {
+  .atrox-field__tips {
+    @extend %unable-select;
+
+    padding-bottom: 2px;
+  }
+
+  .v-input {
+    font-size: inherit;
+
+    fieldset {
+      border-width: 1px !important;
+    }
+
+    .v-input__slot {
+      min-height: 34px !important;
+      margin-bottom: 2px;
+    }
+
+    .v-text-field__details {
+      margin-bottom: 4px;
+    }
+
+    .v-input__append-inner {
+      margin-top: 5px !important;
+
+      .v-icon {
+        font-size: 20px !important;
+      }
+    }
+
+    .v-select__selections {
+      min-height: 34px !important;
+    }
+  }
+
+  .v-select {
+    input {
+      padding: 3px 0 !important;
+    }
+  }
+
+  .v-chip--select {
+    height: 24px !important;
+    background-color: $color-primary !important;
+    color: white !important;
+  }
+
+  .v-input--selection-controls {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+
+    .v-label {
+      font-size: 14px;
+      margin: 0 6px 0 0;
+    }
+  }
+
+  .v-input--is-disabled {
+    .v-input__slot {
+      background: #e9ecef;
+    }
+  }
+
+  .vxe-input {
+    width: 100%;
+
+    .vxe-input--inner {
+      border-color: rgba(0, 0, 0, 0.38);
+    }
+  }
+
+  .vxe-input:not(.is--disabled).is--active .vxe-input--inner {
+    border-color: $color-primary;
+  }
+}
+
+.atrox-form-row {
+  .atrox-form-value {
+    display: inline;
+    max-width: 100%;
+  }
+}
+
+.atrox-form-inline {
+  .atrox-form-col {
+    padding: 0 4px;
+    display: inline-flex;
+  }
+
+  .atrox-form-label {
+    display: inline;
+    padding: 6px 8px 0 8px;
+  }
+
+  .atrox-form-value {
+    display: inline;
+    max-width: 200px;
+  }
+}
+
+.atrox-form-flex {
+  display: flex;
+  flex-wrap: wrap;
+
+  .atrox-form-field-wrap {
+    flex: 0 0 100%;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+  }
+
+  .atrox-form-col {
+    display: flex;
+  }
+
+  @for $i from 1 through 6 {
+    .atrox-form-col-#{$i} {
+      flex: 0 0 (100% / $i);
+      max-width: (100% / $i);
+    }
+  }
+
+  .atrox-form-label {
+    text-align: right;
+    padding: 6px 8px 0 8px;
+
+    @for $i from 1 through 12 {
+      &-#{$i} {
+        flex: 0 0 (100%/12) * $i;
+        max-width: (100%/12) * $i;
+      }
+    }
+  }
+
+  .atrox-form-value {
+    flex-basis: 0;
+    flex-grow: 1;
+  }
+}
+
+.atrox-form-row,
+.atrox-form-flex {
+  .atrox-form-col {
+    padding: 0 16px;
+  }
+}
+
+.atrox-form-action-inline {
+  display: inline;
+}
+
+.atrox-form-action-row,
+.atrox-form-action-flex {
+  border-top: 1px solid #e0e0e0;
+  text-align: right;
+  padding: 6px 16px;
+}
+
+.atrox-form-action-flex {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
